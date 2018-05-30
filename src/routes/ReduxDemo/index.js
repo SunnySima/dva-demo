@@ -1,52 +1,28 @@
-import { combineReducers, createStore } from 'redux';
+import { createStore } from 'redux';
 import { connect } from 'dva';
+import reducer from './reducers'
+import { VisiableFilter, toggleTodo, addTodo, setVisiableFilter } from './action'
 
-function visibilityFilter(state = 'SHOW_ALL', action) {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter
-    default:
-      return state
-  }
-}
-
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          text: action.text,
-          completed: false
-        }
-      ]
-    case 'COMPLETE_TODO':
-      return state.map((todo, index) => {
-        if (index === action.index) {
-          return Object.assign({}, todo, {
-            completed: true
-          })
-        }
-        return todo
-      })
-    default:
-      return state
-  }
-}
+const { SHOW_COMPLETE, SHOW_ACTIVE } = VisiableFilter;
 
 
 function ReduxDemo() {
-    let reducer = combineReducers({
-        visibilityFilter,
-        todos
-    })
     let store = createStore(reducer)
 
-    store.dispatch({
-        type: 'ADD_TODO',
-        text: 'hello redux'
+    const unsubscribe = store.subscribe(() => {
+      console.log(store.getState())
     })
-    console.log(store.getState())
+
+    store.dispatch(addTodo('sunny1'))
+    store.dispatch(addTodo('sunny2'))
+
+    store.dispatch(toggleTodo(1))
+
+    store.dispatch(setVisiableFilter(SHOW_COMPLETE))
+    store.dispatch(setVisiableFilter(SHOW_ACTIVE))
+
+    unsubscribe();
+    
     return <div>Redux Demo</div>
 }
 
