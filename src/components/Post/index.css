@@ -1,0 +1,20 @@
+.row {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    border-radius: 5px;
+    line-height: 0.8rem;
+    background-color: #fff;
+}
+
+.column {
+    width: 50%;
+    display: inline-block;
+}
+
+.postContent {
+    padding-top: 5px;
+}
+
+.postOperation {
+    text-align: right;
+}
