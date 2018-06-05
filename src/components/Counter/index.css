@@ -1,0 +1,39 @@
+.counterItem {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.counterNum {
+    font-size: 1.6rem;
+}
+
+.counterBtn {
+    width: 100%;
+}
+
+.counterBtn button {
+    box-sizing: content-box;
+    width: 10%;
+    height: 2rem;
+    font-size: 1.5rem;
+    border-radius: 3.5px;
+    border: 1px solid #eee;
+    color: #fff;
+    background-color: #8BC34A;
+    cursor: pointer;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+.counterBtn button:hover {
+    background-color: #4caf50;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
