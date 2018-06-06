@@ -1,20 +1,49 @@
 .row {
-    width: 100%;
-    border-bottom: 1px solid #eee;
-    border-radius: 5px;
-    line-height: 0.8rem;
-    background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  border-radius: 5px;
+  line-height: 0.8rem;
+  background-color: #fff;
 }
 
 .column {
-    width: 50%;
-    display: inline-block;
+  width: 50%;
+  display: inline-block;
 }
 
 .postContent {
-    padding-top: 5px;
+  padding-top: 5px;
+  width: 80%;
+}
+
+.postContent * {
+  padding: 0 10px;
+}
+
+.postTitle {
+  font-size: 1rem;
+  padding-top: 10px;
+}
+
+.postContent p {
+  font-size: 0.8rem;
+  color: #7b7676;
 }
 
 .postOperation {
-    text-align: right;
+  text-align: right;
+  width: 20%;
+}
+
+.postOperation p {
+  padding-right: 10px;
+  float: right;
+  color: #000;
+  transition: .5s all;
+  font-size: 0.8rem;
+}
+
+.postOperation p:hover {
+  cursor: pointer;
+  color: #7b7676;
 }
