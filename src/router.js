@@ -3,7 +3,8 @@ import { Router, Route, Switch } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import ReduxDemo from './routes/ReduxDemo';
 import CountDemo from './routes/CountDemo';
-import Post from './components/Post'
+import PostPage from './routes/PostPage';
+import AddPost from './routes/PostPage/AddPost'
 
 function RouterConfig({ history }) {
   return (
@@ -12,7 +13,8 @@ function RouterConfig({ history }) {
         <Route path="/" exact component={IndexPage} />
         <Route path="/reduxDemo" exact component={ReduxDemo} />
         <Route path="/countDemo" exact component={CountDemo} />
-        <Route path="/post" exact component={Post} />
+        <Route path="/postPage" exact component={PostPage} />
+        <Route path="/addPost" exact component={AddPost} />
       </Switch>
     </Router>
   );

@@ -6,7 +6,7 @@ import styles from './index.css';
 
 
 const Post = ({ id, title, creator, status, postTime, onDelete }) => {
-    
+
     return (
         <div className={styles.row}>
             <div className={classnames(styles.postContent, styles.column)}>
@@ -21,9 +21,9 @@ const Post = ({ id, title, creator, status, postTime, onDelete }) => {
 }
 
 function getPostTimeStr(postTime) {
-    if(!postTime)  return null;
+    if (!postTime) return null;
     const time = new Date(postTime || 0);
-    return `${time.getFullYear()}-${getFullNum(time.getMonth()+1)}-${getFullNum(time.getDate())} ${getFullNum(time.getHours())}:${getFullNum(time.getMinutes())}`;
+    return `${time.getFullYear()}-${getFullNum(time.getMonth() + 1)}-${getFullNum(time.getDate())} ${getFullNum(time.getHours())}:${getFullNum(time.getMinutes())}`;
 }
 
 function getFullNum(num) {
@@ -45,7 +45,7 @@ Post.defaultProps = {
     title: '无标题',
     status: 0,
     postTime: +new Date(),
-    onDelete: () => {}
+    onDelete: () => { }
 }
 
 export default Post;
