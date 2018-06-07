@@ -4,7 +4,7 @@ import IndexPage from './routes/IndexPage';
 import ReduxDemo from './routes/ReduxDemo';
 import CountDemo from './routes/CountDemo';
 import PostPage from './routes/PostPage';
-import AddPost from './routes/PostPage/AddPost'
+import AddPost from './routes/PostPage/AddPost';
 
 function RouterConfig({ history }) {
   return (
